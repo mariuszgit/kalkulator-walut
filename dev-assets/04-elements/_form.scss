@@ -1,0 +1,88 @@
+// form {
+//     margin-top: $grid-base * 3;
+
+//     input, textarea {
+//         border: 1px solid rgba($black, .1);
+//         border-radius: 0;
+//         display: block;
+//         padding: $grid-base;
+//         font-family: montserrat, 'sans-serif';
+//         font-size: $font-size-5;
+//         font-style: italic;
+//         margin-bottom: $grid-base * 3;
+//         width: 100%;
+//         transition: border .3s ease;
+
+//         &:focus {
+//             border-radius: 0;
+//             border: 1px solid rgba($black, .5);
+//         }
+
+//         &:focus-visible {
+//             border-radius: 0;
+//             outline: -webkit-focus-ring-color auto 0px;
+//         }
+        
+//     }
+// }
+
+label {
+    display: block;
+    margin-bottom: $grid-base;
+}
+
+input {
+    border: 2px solid $accent;
+    background: rgba($accent, .1);
+    color: $dark;
+    display: block;
+    font-size: $font-size-3;
+    padding: $grid-base;
+    width: 100%;
+    margin-bottom: $grid-base*2;
+    line-height: 32px;
+
+    @include border-radius($border-radius);
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+//nadpisane style
+
+.ss-main {
+    margin-bottom: $grid-base*2;
+}
+
+.ss-main .ss-single-selected {
+    border: 2px solid $accent;
+    background: rgba($accent, .1);
+    color: $dark;
+    font-size: $font-size-3;
+    height: auto;
+    padding: $grid-base;
+
+    @include border-radius($border-radius);
+
+}
+
+.ss-main .ss-single-selected .placeholder {
+    line-height: 32px;
+}
+
+.ss-open-above {
+    // margin-bottom: 0;
+}
+
+.ss-main .ss-single-selected .ss-arrow span {
+    border: solid $dark;
+    border-width: 0 2px 2px 0;
+}

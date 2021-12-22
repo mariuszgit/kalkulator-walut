@@ -1,0 +1,133 @@
+.t-portfolio-section {
+    padding-top: $grid-base * 20;
+
+    &__item {
+        margin-bottom: $grid-base * 2;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__image {
+        img {
+
+            border-radius: 4px;
+        }
+    }
+    
+
+    &__inner {
+        background: $white;
+        box-shadow: 0 0 30px rgba($black, $alpha: .1);
+        border-radius: 4px;
+        padding: $gutter*2 $gutter;
+        position: absolute;
+        right: 0;
+        width: 55%;
+    }
+
+    &__background {
+        background: url(../img/lakiernictwo-print-screen.png) no-repeat;
+        background-size: cover;
+        
+        position: absolute;
+        transition: opacity .5s ease-in-out;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+
+        &:hover {
+            opacity: 1;
+            
+            animation: portfolio-animation 30s infinite;
+        }
+    }
+
+    &__description {
+        // padding: $gutter;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: -10px;
+
+    }
+
+    &__symbols {
+        img {
+            max-width: 40px;
+            margin-right: $grid-base;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        text-align: center;
+        
+
+        &:hover {
+            opacity: 100%;
+            background-color: rgba($black, $alpha: 0);
+            
+            
+        }
+    }
+}
+
+@keyframes portfolio-animation {
+    5% {
+        background-position: top;
+    }
+
+    50% {
+        background-position: bottom;    
+    }
+
+    60% {
+        background-position: bottom;
+    }
+
+    100% {
+        background-position: top;
+    }
+}
+
+// @keyframes portfolio-animation {
+//     10% {
+//         background-position: top;
+//     }
+
+//     20% {
+//         background-position: bottom;    
+//     }
+
+//     20% {
+//         background-position: bottom;
+//     }
+
+//     30% {
+//         background-image: url(../img/lakiernictwo-print-screen.png);
+//         background-position: top;
+//     }
+
+//     40% {
+//         background-position: top;
+//         background-image: url(../img/lakiernictwo-mobile-print-screen.png);
+//     }
+
+//     60% {
+//         background-position: bottom;
+//     }
+//     90% {
+//         background-image: url(../img/lakiernictwo-mobile-print-screen.png);
+//     }
+// }

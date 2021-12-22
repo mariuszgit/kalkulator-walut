@@ -1,0 +1,77 @@
+.o-col {
+    width: 100%;
+    padding-left: $gutter*2;
+    padding-right: $gutter*2;
+    &--md50 {
+        @include medium-up {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+    &--md25 {
+        @include medium-up {
+            flex: 0 0 25%;
+            max-width: 25%; //dla ie10 i ie11
+        }
+    }
+    &--md33 {
+        @include medium-up {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%; //dla ie10 i ie11
+        }
+    }
+    &--md30 {
+        @include medium-up {
+        flex: 0 0 30%;
+        max-width: 30%; //dla ie10 i ie11
+        }
+    }
+    &--md70 {
+        @include medium-up {
+        flex: 0 0 70%;
+        max-width: 70%; //dla ie10 i ie11
+        }
+    }
+    &--md40 {
+        @include medium-up {
+        flex: 0 0 40%;
+        max-width: 40%; //dla ie10 i ie11
+        }
+    }
+    &--md60 {
+        @include medium-up {
+        flex: 0 0 60%;
+        max-width: 60%; //dla ie10 i ie11
+        }
+    }
+    &--md75 {
+        @include medium-up {
+        flex: 0 0 75%;
+        max-width: 75%; //dla ie10 i ie11
+        }
+    }
+    &--lg50 {
+        @include large-up {
+        flex: 0 0 50%;
+        max-width: 50%; //dla ie10 i ie11
+        }
+    }
+    &--lg25 {
+        @include large-up {
+        flex: 0 0 25%;
+        max-width: 25%; //dla ie10 i ie11
+        }
+    }
+    &--lg33 {
+        @include large-up {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%; //dla ie10 i ie11
+        }
+    }
+    &--lg75 {
+        @include large-up {
+        flex: 0 0 75%;
+        max-width: 75%; //dla ie10 i ie11
+        }
+    }  
+}

@@ -1,0 +1,8 @@
+.c-date-box {
+    background-color: $accent;
+    color: $dark;
+    display: inline-block;
+    padding: $grid-base*2 $grid-base*3;
+
+    @include border-radius($border-radius);
+}

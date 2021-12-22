@@ -1,0 +1,32 @@
+.t-about-section {
+    padding-top: $grid-base*20;
+
+    &__header {
+        margin-bottom: $grid-base * 4;
+    }
+
+    .o-row {
+        justify-content: center;
+    }
+
+    &__left {
+        display: none;
+        img {
+            border-radius: 4px;
+        }
+        @include medium-up {
+            display: block;
+
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        @include medium-up {
+        }
+    
+    }
+}

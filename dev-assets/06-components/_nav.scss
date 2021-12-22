@@ -1,0 +1,103 @@
+.c-nav {
+    background: rgba($white, 0);
+    box-shadow: 0px 0px 0px rgba($black, 0);
+    position: absolute;
+    transition: all .4s ease-out;
+    width: 100%;
+    z-index: 100;
+
+    @include medium-up {
+        position: fixed;
+    }
+    
+    &__logo {
+        width: 270px; //220
+    }
+
+    &__list {
+        margin-right: -$grid-base;
+    }
+
+    &__item {
+        display: none;
+
+        @include medium-up {
+            overflow: hidden;
+            display: block;
+            position: relative;
+            float: left;
+            margin-left: $grid-base * 1;
+
+            &:hover {
+                & .c-nav__first {
+                    transform: translateY(0);
+                }
+                & .c-nav__second {
+                    transform: translateY(-100%);
+                }
+            }
+
+            a {
+                font-size: 18px;
+                text-decoration: none;
+                font-family: Raleway, sans-serif;
+                font-weight: 600;
+                color: $black;
+            }
+
+            span {
+                padding: $grid-base;
+            }
+            
+        }
+    }
+
+    &__first {
+        position: absolute;
+        transform: translateY(100%);
+        transition: all .3s ease;
+    }
+
+    &__second {
+        position: relative;
+        display: block;
+        transition: all .3s ease;
+    }
+
+    &__active {
+        & .c-nav__first {
+            transform: translateY(0);
+            color: rgba($black, 1);
+        }
+        & .c-nav__second {
+            transform: translateY(-100%);
+        }
+    }
+}
+
+.c-nav .o-container {
+
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    width: 100%;
+    padding: $gutter*2 $gutter;
+    justify-content: space-between;
+    transition: all .4s ease-out;
+}
+
+.sticky {
+    z-index: 50;
+
+    @include medium-up {
+        box-shadow: 0px 5px 15px rgba($black, 0.1);
+        background: rgba($white, 1);
+    }
+
+    & .o-container {
+        @include medium-up {
+            
+            padding: $gutter $gutter;
+        }
+    }
+}
