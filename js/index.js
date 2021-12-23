@@ -81,7 +81,7 @@ amountInput.addEventListener('input', () => {
           .then(json => {
             let rates = json[0].rates;
             rates.forEach(el => {
-                data.push({innerHTML: '<img width="24" height="24" src="flags/'+el.code+'.svg" title="'+el.currency+'" style="margin-right: 20px"></img> <div><div>'+ el.code +'</div></div>', text: el.code, value: el.code, currency: el.mid});
+                data.push({innerHTML: '<img width="24" height="24" src="flags/'+el.code.toLowerCase()+'.svg" title="'+el.currency+'" style="margin-right: 20px"></img> <div><div>'+ el.code +'</div></div>', text: el.code, value: el.code, currency: el.mid});
             //   data.push({innerHTML: '<img width="20" height="20" src="flags/'+el.code+'.svg" title="'+el.currency+'"></img> <div><div>'+ el.code +'</div><br><div class="currency">'+ el.currency+ '</div></div>', text: el.code, value: el.code, currency: el.mid});
             });
             select1.setData(data);
