@@ -30,8 +30,18 @@ async function getCurrency(currency) {
 async function convert() {
   if (select1Input.value === "PLN" && select2Input.value !== "PLN") {
     summaryInput.value = (amountInput.value / await getCurrency(select2Input.value)).toFixed(2);
+      
+      if (amountInput.value!=='') {
+        detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${dotToComma(summaryInput.value)} ${select2Input.value}`;
+      } else {
+        detailsBox.innerText = ''
+      }
+    
   }
-  
+}
+
+function dotToComma(x) {
+    return x.replace('.',',');
 }
 
 //event handlers
@@ -40,6 +50,7 @@ let amountInput = document.querySelector('#amount');
 let summaryInput = document.querySelector('#summary');
 let select1Input = document.querySelector('#select1');
 let select2Input = document.querySelector('#select2');
+let detailsBox = document.querySelector('.t-main-section__details');
 
 amountInput.addEventListener('input', () => {
   convert();

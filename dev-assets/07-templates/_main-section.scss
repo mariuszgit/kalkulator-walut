@@ -31,13 +31,10 @@
         background-size: contain;
         border: 2px solid transparent;
         margin-bottom: 0;
-        // &::after {
-        //     content: url(../img/underline.svg);
-        //     display: inline-block;
-        //     position: absolute;
-        //     bottom: 0;
-        //     left: 0;
-        // }
+    }
+
+    &__details {
+        text-align: center;
     }
 
 }

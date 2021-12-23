@@ -508,6 +508,9 @@ input[type=number] {
   border: 2px solid transparent;
   margin-bottom: 0;
 }
+.t-main-section__details {
+  text-align: center;
+}
 
 .t-about-section {
   padding-top: 200px;
