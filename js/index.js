@@ -33,20 +33,23 @@ function dotToComma(x) {
 }
 
 function showDetails() {
-  if (amountInput.value!=='') {
-      detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
-    } else {
-      detailsBox.innerText = ''
-    }
+  // if (amountInput.value!=='') {
+  //     detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
+  //   } else {
+  //     detailsBox.innerText = ''
+  //   }
 }
 
 async function convert() {
+  if (amountInput.value == '') {
+    summaryInput.value = '';
+  } else
   if (select1Input.value === "PLN" && select2Input.value !== "PLN") {
     summaryInput.value = dotToComma((amountInput.value / await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
     showDetails();
   } else
   if (select1Input.value !== "PLN" && select2Input.value === "PLN") {
-    summaryInput.value = (amountInput.value * await getCurrency(select1Input.value)).toFixed(2) + " " + select2Input.value;
+    summaryInput.value = dotToComma((amountInput.value * await getCurrency(select1Input.value)).toFixed(2)) + " " + select2Input.value;
     showDetails();
   } else 
   if (select1Input.value !== "PLN" && select2Input.value !== "PLN") {
@@ -64,24 +67,37 @@ let summaryInput = document.querySelector('#summary');
 let select1Input = document.querySelector('#select1');
 let select2Input = document.querySelector('#select2');
 let detailsBox = document.querySelector('.t-main-section__details');
+let rotateButton = document.querySelector('.t-main-section__rotate');
 
 amountInput.addEventListener('input', () => {
   convert();
 });
 
+rotateButton.addEventListener('click', () => {
+  let temp = select1Input.value;
+  select1.set(select2Input.value);
+  select2.set(temp);
+  convert();
+});
 
+select1Input.addEventListener('change', () => {
+  convert();
+});
 
-
-
+select2Input.addEventListener('change', () => {
+  convert();
+});
 
   
 
     let select1 = new SlimSelect({
-        select: '#select1'
+        select: '#select1',
+        searchPlaceholder: 'Szukaj'
     });
 
     let select2 = new SlimSelect({
-        select: '#select2'
+        select: '#select2',
+        searchPlaceholder: 'Szukaj'
     });
 
     let data =[];

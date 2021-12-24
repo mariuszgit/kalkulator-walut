@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #eaead9 url(../img/background.png) no-repeat center bottom;
+  background: #eaead9 url(../img/background.png) no-repeat center bottom fixed;
   background-size: contain;
   color: #606060;
   font-family: Lato, "sans-serif";
@@ -72,7 +72,7 @@ input {
   font-size: 1.61rem;
   padding: 10px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   line-height: 32px;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -90,7 +90,7 @@ input[type=number] {
 }
 
 .ss-main {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .ss-main .ss-single-selected {
@@ -107,6 +107,10 @@ input[type=number] {
 
 .ss-main .ss-single-selected .placeholder {
   line-height: 32px;
+}
+
+.ss-content .ss-search input:focus {
+  box-shadow: 0 0 5px #B4D51E;
 }
 
 .ss-main .ss-single-selected .ss-arrow span {
@@ -127,7 +131,7 @@ input {
   font-size: 1.61rem;
   padding: 10px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   line-height: 32px;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -145,7 +149,7 @@ input[type=number] {
 }
 
 .ss-main {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .ss-main .ss-single-selected {
@@ -162,6 +166,10 @@ input[type=number] {
 
 .ss-main .ss-single-selected .placeholder {
   line-height: 32px;
+}
+
+.ss-content .ss-search input:focus {
+  box-shadow: 0 0 5px #B4D51E;
 }
 
 .ss-main .ss-single-selected .ss-arrow span {
@@ -495,6 +503,17 @@ input[type=number] {
   .t-main-section__first-column {
     margin-bottom: 0;
   }
+}
+.t-main-section__rotate {
+  display: block;
+  margin: -15px auto;
+  width: 30px;
+  opacity: 0.5;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+.t-main-section__rotate:hover {
+  opacity: 1;
 }
 .t-main-section__hr {
   display: block;

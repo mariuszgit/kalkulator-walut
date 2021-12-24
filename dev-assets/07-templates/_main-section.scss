@@ -19,6 +19,18 @@
         }
     }
 
+    &__rotate {
+        display: block;
+        margin: -15px auto;
+        width: 30px;
+        opacity: .5;
+        transition: all .25s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
     &__hr {
         display: block;
         margin: $grid-base*2.5 0 $grid-base*2 0;

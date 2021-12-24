@@ -39,7 +39,8 @@ input {
     font-size: $font-size-3;
     padding: $grid-base;
     width: 100%;
-    margin-bottom: $grid-base*2;
+    // margin-bottom: $grid-base*2;
+    margin-bottom: 32px;
     line-height: 32px;
 
     @include border-radius($border-radius);
@@ -59,7 +60,8 @@ input[type=number] {
 //nadpisane style
 
 .ss-main {
-    margin-bottom: $grid-base*2;
+    // margin-bottom: $grid-base*2;
+    margin-bottom: 32px;
 }
 
 .ss-main .ss-single-selected {
@@ -80,6 +82,10 @@ input[type=number] {
 
 .ss-open-above {
     // margin-bottom: 0;
+}
+
+.ss-content .ss-search input:focus {
+    box-shadow: 0 0 5px $accent;
 }
 
 .ss-main .ss-single-selected .ss-arrow span {
