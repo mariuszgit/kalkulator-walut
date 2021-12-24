@@ -29,10 +29,10 @@ async function getCurrency(currency) {
 
 async function convert() {
   if (select1Input.value === "PLN" && select2Input.value !== "PLN") {
-    summaryInput.value = (amountInput.value / await getCurrency(select2Input.value)).toFixed(2);
+    summaryInput.value = dotToComma((amountInput.value / await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
       
       if (amountInput.value!=='') {
-        detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${dotToComma(summaryInput.value)} ${select2Input.value}`;
+        detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
       } else {
         detailsBox.innerText = ''
       }
