@@ -27,21 +27,34 @@ async function getCurrency(currency) {
   return json.rates[0].mid; 
 }
 
+function dotToComma(x) {
+  String(x);
+  return x.replace('.',',');
+}
+
+function showDetails() {
+  if (amountInput.value!=='') {
+      detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value} ${select2Input.value}`;
+    } else {
+      detailsBox.innerText = ''
+    }
+}
+
 async function convert() {
   if (select1Input.value === "PLN" && select2Input.value !== "PLN") {
     summaryInput.value = dotToComma((amountInput.value / await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
-      
-      if (amountInput.value!=='') {
-        detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
-      } else {
-        detailsBox.innerText = ''
-      }
-    
+    showDetails();
+  } else
+  if (select1Input.value !== "PLN" && select2Input.value === "PLN") {
+    summaryInput.value = (amountInput.value * await getCurrency(select1Input.value)).toFixed(2) + " " + select2Input.value;
+    showDetails();
+  } else 
+  if (select1Input.value !== "PLN" && select2Input.value !== "PLN") {
+    console.log(`${amountInput.value * await getCurrency(select1Input.value)}`);
+    summaryInput.value = dotToComma((amountInput.value * await getCurrency(select1Input.value)/ await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
+    // summaryInput.value = ((amountInput.value * await getCurrency(select1Input.value)));
+    showDetails();
   }
-}
-
-function dotToComma(x) {
-    return x.replace('.',',');
 }
 
 //event handlers

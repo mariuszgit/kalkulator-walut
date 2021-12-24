@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #eaead9 url(../img/background.png) no-repeat center bottom fixed;
+  background: #eaead9 url(../img/background.png) no-repeat center bottom;
   background-size: contain;
   color: #606060;
   font-family: Lato, "sans-serif";
@@ -380,7 +380,7 @@ input[type=number] {
 }
 @media (min-width: 1200px) {
   .c-heading--level1 {
-    font-size: 2.88rem;
+    font-size: 2.61rem;
   }
 }
 .c-heading--level2 {
