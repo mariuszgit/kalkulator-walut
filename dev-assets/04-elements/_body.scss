@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: $background-color url(../img/background.png) no-repeat center bottom fixed;
+    background: $background-color url(../img/background.png) no-repeat center bottom;
     background-size: contain;
     color: $grey;
     font-family: Lato, 'sans-serif';
