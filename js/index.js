@@ -34,7 +34,7 @@ function dotToComma(x) {
 
 function showDetails() {
   if (amountInput.value!=='') {
-      detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value} ${select2Input.value}`;
+      detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
     } else {
       detailsBox.innerText = ''
     }
