@@ -33,16 +33,17 @@ function dotToComma(x) {
 }
 
 function showDetails() {
-  // if (amountInput.value!=='') {
-  //     detailsBox.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
-  //   } else {
-  //     detailsBox.innerText = ''
-  //   }
+  if (amountInput.value!=='') {
+      summaryInput.title = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
+    } else if (amountInput.value=='') {
+      summaryInput.title = ''
+    }
 }
 
 async function convert() {
   if (amountInput.value == '') {
     summaryInput.value = '';
+    showDetails();
   } else
   if (select1Input.value === "PLN" && select2Input.value !== "PLN") {
     summaryInput.value = dotToComma((amountInput.value / await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
@@ -55,7 +56,6 @@ async function convert() {
   if (select1Input.value !== "PLN" && select2Input.value !== "PLN") {
     console.log(`${amountInput.value * await getCurrency(select1Input.value)}`);
     summaryInput.value = dotToComma((amountInput.value * await getCurrency(select1Input.value)/ await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
-    // summaryInput.value = ((amountInput.value * await getCurrency(select1Input.value)));
     showDetails();
   }
 }
