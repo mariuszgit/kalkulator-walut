@@ -144,6 +144,4 @@ select2Input.addEventListener('change', () => {
             select2.set('EUR');
           })
         );
-
-
 });
