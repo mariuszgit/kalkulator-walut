@@ -40,23 +40,35 @@ function showDetails() {
     }
 }
 
+function showLabel() {
+  if (amountInput.value!=='') {
+    summaryLabel.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} to:`;
+  } else if (amountInput.value=='') {
+    summaryLabel.innerText = ''
+  }
+}
+
 async function convert() {
   if (amountInput.value == '') {
     summaryInput.value = '';
     showDetails();
+    showLabel();
   } else
   if (select1Input.value === "PLN" && select2Input.value !== "PLN") {
     summaryInput.value = dotToComma((amountInput.value / await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
     showDetails();
+    showLabel();
   } else
   if (select1Input.value !== "PLN" && select2Input.value === "PLN") {
     summaryInput.value = dotToComma((amountInput.value * await getCurrency(select1Input.value)).toFixed(2)) + " " + select2Input.value;
     showDetails();
+    showLabel();
   } else 
   if (select1Input.value !== "PLN" && select2Input.value !== "PLN") {
     console.log(`${amountInput.value * await getCurrency(select1Input.value)}`);
     summaryInput.value = dotToComma((amountInput.value * await getCurrency(select1Input.value)/ await getCurrency(select2Input.value)).toFixed(2)) + " " + select2Input.value;
     showDetails();
+    showLabel();
   }
 }
 
@@ -67,7 +79,9 @@ let summaryInput = document.querySelector('#summary');
 let select1Input = document.querySelector('#select1');
 let select2Input = document.querySelector('#select2');
 let detailsBox = document.querySelector('.t-main-section__details');
+let summaryLabel = document.querySelector('label[for="summary"]');
 let rotateButton = document.querySelector('.t-main-section__rotate');
+console.log(summaryLabel);
 
 amountInput.addEventListener('input', () => {
   convert();

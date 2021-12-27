@@ -541,6 +541,9 @@ input[type=number] {
   display: block;
   margin: 25px 0 20px 0;
 }
+.t-main-section label[for=summary] {
+  text-align: center;
+}
 .t-main-section__summary {
   text-align: center;
   position: relative;

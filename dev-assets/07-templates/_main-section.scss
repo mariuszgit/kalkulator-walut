@@ -36,6 +36,10 @@
         margin: $grid-base*2.5 0 $grid-base*2 0;
     }
 
+    label[for="summary"] {
+        text-align: center;
+    }
+
     &__summary {
         text-align: center;
         position: relative;
