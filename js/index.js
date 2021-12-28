@@ -44,7 +44,7 @@ function showLabel() {
   if (amountInput.value!=='') {
     summaryLabel.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} to:`;
   } else if (amountInput.value=='') {
-    summaryLabel.innerText = ''
+    summaryLabel.innerHTML = '&nbsp;'
   }
 }
 
@@ -81,7 +81,6 @@ let select2Input = document.querySelector('#select2');
 let detailsBox = document.querySelector('.t-main-section__details');
 let summaryLabel = document.querySelector('label[for="summary"]');
 let rotateButton = document.querySelector('.t-main-section__rotate');
-console.log(summaryLabel);
 
 amountInput.addEventListener('input', () => {
   convert();
