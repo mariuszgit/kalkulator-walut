@@ -1,5 +1,7 @@
 # kalkulator-walut
-### Online currency calculator
+
+> Online currency calculator.
+> Live demo [_here_](https://mariuszgit.github.io/kalkulator-walut/).
 
 
 
