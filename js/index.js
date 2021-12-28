@@ -27,27 +27,6 @@ async function getCurrency(currency) {
   return json.rates[0].mid; 
 }
 
-function dotToComma(x) {
-  String(x);
-  return x.replace('.',',');
-}
-
-function showDetails() {
-  if (amountInput.value!=='') {
-      summaryInput.title = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
-    } else if (amountInput.value=='') {
-      summaryInput.title = ''
-    }
-}
-
-function showLabel() {
-  if (amountInput.value!=='') {
-    summaryLabel.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} to:`;
-  } else if (amountInput.value=='') {
-    summaryLabel.innerHTML = '&nbsp;'
-  }
-}
-
 async function convert() {
   if (amountInput.value == '') {
     summaryInput.value = '';
@@ -71,6 +50,29 @@ async function convert() {
     showLabel();
   }
 }
+
+function dotToComma(x) {
+  String(x);
+  return x.replace('.',',');
+}
+
+function showDetails() {
+  if (amountInput.value!=='') {
+      summaryInput.title = `${dotToComma(amountInput.value)} ${select1Input.value} = ${summaryInput.value}`;
+    } else if (amountInput.value=='') {
+      summaryInput.title = ''
+    }
+}
+
+function showLabel() {
+  if (amountInput.value!=='') {
+    summaryLabel.innerText = `${dotToComma(amountInput.value)} ${select1Input.value} to:`;
+  } else if (amountInput.value=='') {
+    summaryLabel.innerHTML = '&nbsp;'
+  }
+}
+
+
 
 //event handlers
 
@@ -101,7 +103,7 @@ select2Input.addEventListener('change', () => {
   convert();
 });
 
-  
+// install slimselect
 
     let select1 = new SlimSelect({
         select: '#select1',
@@ -113,8 +115,11 @@ select2Input.addEventListener('change', () => {
         searchPlaceholder: 'Szukaj'
     });
 
-    let data =[];
-      data.push({innerHTML: '<img width="24" height="24" src="flags/pln.svg" title="Złoty polski" style="margin-right: 20px"></img> <div><div>PLN</div></div>', text: 'PLN', value: 'PLN', currency: 'Złoty polski'});
+    const data =[];
+    
+      data.push(
+        {innerHTML: '<img src="flags/pln.svg" class="ss-main__image" title="złoty polski" /> <div class="ss-main__code" title="złoty polski">PLN<br /><span class="ss-main__currency">Złoty polski</span></div>', text: 'PLN', value: 'PLN', currency: 'Złoty polski'}
+        );
       fetch('https://api.nbp.pl/api/exchangerates/tables/a/')
         .then(res => res.json())
         .then(json => {
@@ -123,7 +128,13 @@ select2Input.addEventListener('change', () => {
             if (el.code == 'ZAR') {el.currency = 'rand południowoafrykański'} else {
               if (el.code == 'XCD' ) return;
             }
-            data.push({innerHTML: '<img width="24" height="24" src="flags/'+el.code.toLowerCase()+'.svg" title="'+el.currency+'" style="margin-right: 20px"></img> <div><div>'+ el.code +'</div></div>', text: el.code, value: el.code, currency: el.mid});            
+            data.push({
+              innerHTML: `<img src="flags/${el.code.toLowerCase()}.svg" class="ss-main__image" title="${el.currency}" /><div class="ss-main__code" title="${el.currency}">${el.code}<br /><span class="ss-main__currency">${el.currency}</span></div>`,
+              text: el.code,
+              value: el.code, 
+              currency: el.mid
+            });
+            // data.push({innerHTML: '<img width="24" height="24" src="flags/'+el.code.toLowerCase()+'.svg" title="'+el.currency+'" style="margin-right: 20px"></img> <div><div>'+ el.code +'</div></div>', text: el.code, value: el.code, currency: el.mid});            
             // data.push({innerHTML: '<img width="20" height="20" src="flags/'+el.code.toLowerCase()+'.svg"></img> <div><div>'+ el.code +'</div><br><div class="currency">'+ el.currency+ '</div></div>', text: el.code, value: el.code, currency: el.mid});
           });
           
@@ -134,9 +145,16 @@ select2Input.addEventListener('change', () => {
           .then(json => {
             let rates = json[0].rates;
             rates.forEach(el => {
-                data.push({innerHTML: '<img width="24" height="24" src="flags/'+el.code.toLowerCase()+'.svg" title="'+el.currency+'" style="margin-right: 20px"></img> <div><div>'+ el.code +'</div></div>', text: el.code, value: el.code, currency: el.mid});
+              data.push({
+                innerHTML: `<img src="flags/${el.code.toLowerCase()}.svg" class="ss-main__image" title="${el.currency}" /><div class="ss-main__code" title="${el.currency}">${el.code}<br /><span class="ss-main__currency">${el.currency}</span></div>`,
+                text: el.code,
+                value: el.code, 
+                currency: el.mid
+              });
+                // data.push({innerHTML: '<img src="flags/'+el.code.toLowerCase()+'.svg" class="ss-main__image" title="'+el.currency+'" style="margin-right: 20px"></img> <div><div>'+ el.code +'</div></div>', text: el.code, value: el.code, currency: el.mid});
             //   data.push({innerHTML: '<img width="20" height="20" src="flags/'+el.code+'.svg" title="'+el.currency+'"></img> <div><div>'+ el.code +'</div><br><div class="currency">'+ el.currency+ '</div></div>', text: el.code, value: el.code, currency: el.mid});
             });
+            console.log(data);
             select1.setData(data);
             select2.setData(data);
             select1.set('PLN');

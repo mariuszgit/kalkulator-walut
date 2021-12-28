@@ -114,12 +114,22 @@ input[type=number] {
 .ss-main {
   margin-bottom: 32px;
 }
+.ss-main__image {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
+.ss-main__currency {
+  font-size: 14px;
+}
 
 .ss-main .ss-single-selected {
   border: 2px solid #B4D51E;
   background: rgba(180, 213, 30, 0.1);
   color: #172D62;
   font-size: 1.61rem;
+  font-size: 1rem;
   height: auto;
   padding: 10px;
   border-radius: 2px;
@@ -130,6 +140,9 @@ input[type=number] {
 .ss-main .ss-single-selected .placeholder {
   line-height: 32px;
 }
+.ss-main .ss-single-selected .placeholder .ss-main__currency {
+  display: none;
+}
 
 .ss-content .ss-search input:focus {
   box-shadow: 0 0 5px #B4D51E;
@@ -138,6 +151,11 @@ input[type=number] {
 .ss-main .ss-single-selected .ss-arrow span {
   border: solid #172D62;
   border-width: 0 2px 2px 0;
+}
+
+.ss-option {
+  display: flex;
+  align-items: center;
 }
 
 label {
@@ -173,12 +191,22 @@ input[type=number] {
 .ss-main {
   margin-bottom: 32px;
 }
+.ss-main__image {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
+.ss-main__currency {
+  font-size: 14px;
+}
 
 .ss-main .ss-single-selected {
   border: 2px solid #B4D51E;
   background: rgba(180, 213, 30, 0.1);
   color: #172D62;
   font-size: 1.61rem;
+  font-size: 1rem;
   height: auto;
   padding: 10px;
   border-radius: 2px;
@@ -189,6 +217,9 @@ input[type=number] {
 .ss-main .ss-single-selected .placeholder {
   line-height: 32px;
 }
+.ss-main .ss-single-selected .placeholder .ss-main__currency {
+  display: none;
+}
 
 .ss-content .ss-search input:focus {
   box-shadow: 0 0 5px #B4D51E;
@@ -197,6 +228,11 @@ input[type=number] {
 .ss-main .ss-single-selected .ss-arrow span {
   border: solid #172D62;
   border-width: 0 2px 2px 0;
+}
+
+.ss-option {
+  display: flex;
+  align-items: center;
 }
 
 .o-container {
