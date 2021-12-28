@@ -6,5 +6,8 @@ Lorem ipsum
 
 ## Screenshots
 ![Printscreen](img/screenshots/printscreen.png)
-![Printscreen](img/screenshots/printscreen1.png)
+
+## Setup
+
+To run visit: (https://mariuszgit.github.io/kalkulator-walut/)
 
