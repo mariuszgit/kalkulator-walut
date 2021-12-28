@@ -8,7 +8,7 @@
 ## General Information
 Lorem ipsum
 
-## Screenshots
+## Screenshot
 ![Printscreen](img/screenshots/printscreen.png)
 
 
