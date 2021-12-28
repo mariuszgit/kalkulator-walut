@@ -9,10 +9,9 @@
 Lorem ipsum
 
 ## Technologies Used
-- HTML5
-- CSS3 - SASS
-- BEM + ITCSS
-- Javascript
+- HTML5 (BEM)
+- CSS3 (SASS + ITCSS)
+- Javascript (ES6)
 - REST API
 
 ## Screenshot
