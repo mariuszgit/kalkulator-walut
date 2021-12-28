@@ -5,5 +5,5 @@
 Lorem ipsum
 
 ## Screenshots
-(img/printscreen/printscreen.png)
+![Printscreen](img/printscreen/printscreen.png)
 
